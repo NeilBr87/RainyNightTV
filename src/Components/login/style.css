@@ -1,0 +1,28 @@
+#tabRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+#tabLogin {
+    background-color: rgb(240, 220, 220);
+    width: 32vw;
+    height: 10vh;
+}
+
+#tabSignup {
+    background-color: rgb(220, 220, 240);
+    width: 32vw;
+    height: 10vh;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    margin-top: 10vh;
+}
