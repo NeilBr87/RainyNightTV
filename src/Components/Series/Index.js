@@ -15,6 +15,7 @@ export default function Series() {
                 <h3>Episodes</h3>
                 <h3>More info</h3>
                 <h3>Pitch info</h3>
+                <p>dfsf</p>
             </div>
             </div>
         </div>
