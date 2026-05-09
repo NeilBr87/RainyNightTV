@@ -21,6 +21,7 @@
     height: 17vh;
     border-radius: 10px;
     margin-right: 3vw;
+    border: 0.05px solid white;
 }
 
 .help {
