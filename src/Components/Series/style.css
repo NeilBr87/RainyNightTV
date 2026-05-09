@@ -1,0 +1,15 @@
+.episodeCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 84%;
+    text-align: justify;
+    margin-left: 8vw;
+}
+
+.episodeCard p {
+    font-size: 14.5px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+}

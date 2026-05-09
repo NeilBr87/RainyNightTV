@@ -1,10 +1,9 @@
 import './App.css';
-// import Imok from '../imok';
-import Login from '../login';
+import Lander from '../Lander/Index.js';
 function App() {
   return (
     <div className="App">
-      <Login />
+      <Lander />
     </div>
   );
 }

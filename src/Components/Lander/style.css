@@ -1,0 +1,45 @@
+.logo {
+    width: 8em;
+    margin-top: 10px;
+}
+
+.landscapeImage {
+    width: 88vw;
+    height: 32vh;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.itemRow {
+    margin-left: 4vw;
+    text-align: left;
+    margin-top: 5vh;
+}
+
+.portraitImage {
+    width: 28vw;
+    height: 17vh;
+    border-radius: 10px;
+    margin-right: 3vw;
+}
+
+.help {
+    margin-left: 10px;
+    background: white;
+    color: black;
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+}
+
+.twizlLogo {
+    width: 24px;
+}
