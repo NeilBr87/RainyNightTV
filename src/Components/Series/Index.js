@@ -11,11 +11,10 @@ export default function Series() {
             <h2>CR Zero</h2>
 
             <p>When a Croydon gang boss is convicted, his unlikely protégé must earn the respect of veteran captains who expected to inherit power—while two rival alliances stand on the brink of all-out war.</p>
-            <div>
+            <div className='seriesInfo'>
                 <h3>Episodes</h3>
                 <h3>More info</h3>
                 <h3>Pitch info</h3>
-                <p>dfsfas</p>
             </div>
             </div>
         </div>
