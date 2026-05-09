@@ -1,0 +1,29 @@
+.episodeColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 1rem;
+    margin-left: 4vw;
+
+}
+
+.episodeContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 4rem;
+}
+
+.episodeShot {
+  width: 36vw;
+  border-radius: 5px;
+}
+
+.episodeInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
