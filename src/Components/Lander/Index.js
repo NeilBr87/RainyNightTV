@@ -43,7 +43,7 @@ export default function Lander() {
             </div>
             <div className="footer">
                 <h4>Written and directed by me</h4>
-                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center',alignItems: 'center', gap: '10px'}}>
+                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center',alignItems: 'center', gap: '10px', marginTop: '-20px'}}>
                     <h4>Powered by</h4>
                     <img src={twizlLogo} alt="twizl" className="twizlLogo" />
                 </div>
