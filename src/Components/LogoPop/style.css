@@ -1,0 +1,84 @@
+.logoPopContainer {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: black;
+  overflow: hidden;
+
+  animation: fadeScreen 5s forwards;
+  z-index: 9999;
+}
+
+.logoPopImage {
+  width: 70vw;
+  max-width: 420px;
+
+  opacity: 0;
+
+  animation:
+    logoIntro 1.4s ease-out forwards,
+    logoPulse 2s ease-in-out 1.4s,
+    logoFadeOut 1s ease forwards 4s;
+}
+
+/* Initial pop-in */
+@keyframes logoIntro {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+    filter: blur(10px);
+  }
+
+  60% {
+    transform: scale(1.08);
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Slight breathing effect */
+@keyframes logoPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Fade logo out */
+@keyframes logoFadeOut {
+  to {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+}
+
+/* Fade entire screen */
+@keyframes fadeScreen {
+  0% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
