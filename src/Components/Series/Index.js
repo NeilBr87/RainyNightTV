@@ -41,7 +41,7 @@ export default function Series(props) {
         <div className="series">
             {selectedEpisode === "E0" && (
             <div>
-                <img src={setLogo()} alt={props.seriesName} className="landscapeImage" />
+                <img src={setLogo()} alt={props.seriesName} className="seriesPageImage" />
                 <div className='episodeCard'>
                     <h2>{props.seriesName}</h2>
                     <p>{setBlurb()}</p>

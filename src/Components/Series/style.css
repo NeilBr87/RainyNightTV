@@ -37,3 +37,9 @@
     z-index: 10;
     backdrop-filter: blur(10px);
 }
+
+.seriesPageImage {
+  height: 33vh;
+  width: 100%;
+  overflow: hidden;
+}

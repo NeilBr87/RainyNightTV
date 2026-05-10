@@ -74,6 +74,31 @@
   }
 }
 
+.seriesImageContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.seriesBubble {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: rgba(80, 80, 80, 0.85);
+    color: white;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+
+    padding: 4px 10px;
+    border-radius: 3px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    white-space: nowrap;
+}
+
 .portraitBubble {
     position: absolute;
     bottom: 8px;
