@@ -6,16 +6,31 @@ import CREp1Shot4 from './Ep4Shot.jpg';
 import CREp1Shot5 from './Ep5Shot.jpg';
 import CREp1Shot6 from './Ep6Shot.jpg';
 // Hungry Grass episode shots
-// import HGEp1shot from './HGEp1shot.jpg';
+import HGEp1shot from './HGEp1shot.jpg';
 // Dubai W⚓ episode shots
-// import DEp1shot from './DEp1Shot.jpg';
-// import DEp2shot from './DEp2Shot.jpg';
-// import DEp3shot from './DEp3Shot.jpg';
-// import DEp4shot from './DEp4Shot.jpg';
-// import DEp5shot from './DEp5Shot.jpg';
-// import DEp6shot from './DEp6Shot.jpg';
+import DEp1Shot from './DEp1Shot.jpg';
+import DEp2Shot from './DEp2Shot.jpg';
+import DEp3Shot from './DEp3Shot.jpg';
+import DEp4Shot from './DEp4Shot.jpg';
+import DEp5Shot from './DEp5Shot.jpg';
+import DEp6Shot from './DEp6Shot.jpg';
 import './style.css';
 import EpisodePlayer from '../EpisodePlayer/Index.js';
+
+const episodeData = {
+    "CR Zero": {
+        shots: [CREp1Shot1, CREp1Shot2, CREp1Shot3, CREp1Shot4, CREp1Shot5, CREp1Shot6],
+        count: 6
+    },
+    "Hungry Grass": {
+        shots: [HGEp1shot],
+        count: 1
+    },
+    "Dubai W⚓": {
+        shots: [DEp1Shot, DEp2Shot, DEp3Shot, DEp4Shot, DEp5Shot, DEp6Shot],
+        count: 6
+    }
+};
 export default function Episode(props) {
 
     function handleEpisodeClick(episode) {
@@ -26,32 +41,14 @@ export default function Episode(props) {
     <div>
         {props.selectedEpisode === "E0" && (
         <div className="episodeColumn">
-        <div className='episodeContainer'>
-            <img onClick={() => handleEpisodeClick("E1")} src={CREp1Shot1} alt="shot1" className="episodeShot" />
-        <div className="episodeInfo">
-            <h4>Episode 1</h4>
-        </div>
-        </div>
-         <div className='episodeContainer'>
-            <img onClick={() => handleEpisodeClick("E2")} src={CREp1Shot2} alt="shot2" className="episodeShot" />
-            <h4>Episode 2</h4>
-        </div>
-        <div className='episodeContainer'> 
-            <img onClick={() => handleEpisodeClick("E3")} src={CREp1Shot3} alt="shot3" className="episodeShot" />
-            <h4>Episode 3</h4>
-        </div>
-        <div className='episodeContainer'>
-            <img onClick={() => handleEpisodeClick("E4")} src={CREp1Shot4} alt="shot4" className="episodeShot" />
-            <h4>Episode 4</h4>
-        </div>
-        <div className='episodeContainer'>
-            <img onClick={() => handleEpisodeClick("E5")} src={CREp1Shot5} alt="shot5" className="episodeShot" />
-            <h4>Episode 5</h4>
-        </div>
-        <div className='episodeContainer'>
-            <img onClick={() => handleEpisodeClick("E6")} src={CREp1Shot6} alt="shot6" className="episodeShot" />
-            <h4>Episode 6</h4>
-        </div>
+            {episodeData[props.seriesName].shots.map((shot, index) => (
+                <div key={index} className='episodeContainer'>
+                    <img onClick={() => handleEpisodeClick(`E${index + 1}`)} src={shot} alt={`shot${index + 1}`} className="episodeShot" />
+                    <div className="episodeInfo">
+                        <h4>Episode {index + 1}</h4>
+                    </div>
+                </div>
+            ))}
         </div>)}
 
 
@@ -61,6 +58,7 @@ export default function Episode(props) {
             <EpisodePlayer
                 selectedEpisode={props.selectedEpisode}
                 setSelectedEpisode={props.setSelectedEpisode}
+                seriesName={props.seriesName}
             />
         )}
         </div>

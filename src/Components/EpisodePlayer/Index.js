@@ -6,33 +6,43 @@ import CE4 from './CE4.mp4';
 import CE5 from './CE5.mp4';
 import CE6 from './CE6.mp4';
 // Hungry Grass eps
-// import HE1 from './HE1.mp4';
-// // Dubai W⚓ eps
-// import DE1 from './DE1.mp4';
-// import DE2 from './DE2.mp4';
-// import DE3 from './DE3.mp4';
-// import DE4 from './DE4.mp4';
-// import DE5 from './DE5.mp4';
-// import DE6 from './DE6.mp4';
+import HE1 from './HE1.mp4';
+// Dubai W⚓ eps
+import DE1 from './DE1.mp4';
+import DE2 from './DE2.mp4';
+import DE3 from './DE3.mp4';
+import DE4 from './DE4.mp4';
+import DE5 from './DE5.mp4';
+import DE6 from './DE6.mp4';
 import './style.css';
+
+const episodeSources = {
+    "CR Zero": {
+        E1: CE1,
+        E2: CE2,
+        E3: CE3,
+        E4: CE4,
+        E5: CE5,
+        E6: CE6
+    },
+    "Hungry Grass": {
+        E1: HE1
+    },
+    "Dubai W⚓": {
+        E1: DE1,
+        E2: DE2,
+        E3: DE3,
+        E4: DE4,
+        E5: DE5,
+        E6: DE6
+    }
+};
+
 export default function EpisodePlayer(props) {
 
     function getEpisodeSource(episode) {
-        switch(episode) {
-            case "E1":
-                return CE1;
-            case "E2":
-                return CE2;
-            case "E3":
-                return CE3;
-            case "E4":
-                return CE4;
-            case "E5":
-                return CE5;
-            case "E6":
-                return CE6;
-            default:                return null;
-        }
+        const series = episodeSources[props.seriesName] || episodeSources["CR Zero"];
+        return series[episode] || null;
     }
 
 

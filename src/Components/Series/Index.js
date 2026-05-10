@@ -53,7 +53,7 @@ export default function Series(props) {
             </div>
             </div>
             )}
-            {infoSelected === "episodes" && <Episode selectedEpisode={selectedEpisode} setSelectedEpisode={setSelectedEpisode}  />}
+            {infoSelected === "episodes" && <Episode selectedEpisode={selectedEpisode} setSelectedEpisode={setSelectedEpisode} seriesName={props.seriesName} />}
         </div>
         </div>
     )
