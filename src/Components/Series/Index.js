@@ -6,9 +6,12 @@ import { useState } from 'react';
 import Episode  from '../Episode/Index';
 export default function Series(props) {
     const [infoSelected, setInfoSelected] = useState("episodes");
-
+    const [disclaimerOpen, setDisclaimerOpen] = useState(false);
     const [selectedEpisode, setSelectedEpisode] = useState("E0");
 
+    function handleDisclaimerToggle() {
+        setDisclaimerOpen((open) => !open);
+    }
 
     function setLogo() {
         switch(props.seriesName) {
@@ -44,13 +47,27 @@ export default function Series(props) {
                 <img src={setLogo()} alt={props.seriesName} className="seriesPageImage" />
                 <div className='episodeCard'>
                     <h2>{props.seriesName}</h2>
+                    <div className='disclaimerBox' onClick={handleDisclaimerToggle}>
+                        <div className='disclaimerHeader'>
+                            <span className='disclaimerIcon'>!</span>
+                            <span className='disclaimerLabel'>Disclaimer</span>
+                        </div>
+                        {disclaimerOpen && (
+                            <span className='disclaimerMessage'>While I wrote and directed each episode, each individual shot is AI-generated. Some of what you'll see is less than perfect. Some is downright janky. This is due to a mix of my limited skill and the platform's natural limitations.</span>
+                        )}
+                    </div>
                     <p>{setBlurb()}</p>
                     <div className='seriesInfo'>
-                        <h3 onClick={() => setInfoSelected("episodes")}>Episodes</h3>
-                <h3 onClick={() => setInfoSelected("moreInfo")}>More info</h3>
-                <h3 onClick={() => setInfoSelected("pitchInfo")}>Pitch info</h3>
-            </div>
-            </div>
+                        <h3 className={infoSelected === "episodes" ? "seriesNavItem active" : "seriesNavItem"} onClick={() => setInfoSelected("episodes")}>Episodes</h3>
+                        <h3 className={infoSelected === "moreInfo" ? "seriesNavItem active" : "seriesNavItem"} onClick={() => setInfoSelected("moreInfo")}>More info</h3>
+                        <h3 className={infoSelected === "pitchInfo" ? "seriesNavItem active" : "seriesNavItem"} onClick={() => setInfoSelected("pitchInfo")}>Pitch info</h3>
+                    </div>
+                    {(infoSelected === "moreInfo" || infoSelected === "pitchInfo") && (
+                        <div className='comingSoon'>
+                            <p>Coming soon</p>
+                        </div>
+                    )}
+                </div>
             </div>
             )}
             {infoSelected === "episodes" && <Episode selectedEpisode={selectedEpisode} setSelectedEpisode={setSelectedEpisode} seriesName={props.seriesName} />}

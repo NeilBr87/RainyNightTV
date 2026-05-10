@@ -4,8 +4,8 @@
 }
 
 .landscapeImage {
-    width: 92vw;
-    height: 28vh;
+    width: 88vw;
+    height: 30vh;
     border-radius: 10px;
     margin-top: 2px;
 }
@@ -42,6 +42,80 @@
     justify-content: center;
 
     padding: 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.helpModalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    padding: 20px;
+}
+
+.helpModalCard {
+    position: relative;
+    width: min(420px, 100%);
+    background: rgba(18, 18, 18, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    padding: 28px 24px 24px;
+    color: white;
+}
+
+.helpModalClose {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.helpModalLogo {
+    width: 52px;
+    display: block;
+    margin: 0 auto 18px;
+}
+
+.helpModalHeading {
+    font-size: 1.4rem;
+    margin: 0 0 12px;
+    text-align: center;
+}
+
+.helpModalText {
+    font-size: 0.96rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.helpModalLink {
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    background: #fff;
+    padding: 0 4px;
+    border-radius: 4px;
+}
+
+.helpModalText strong,
+.helpModalText em {
+    color: #ffffff;
+    font-weight: 600;
 }
 
 .twizlLogo {
@@ -49,7 +123,7 @@
 }
 
 .footer {
-    margin-top: 3vh;
+    margin-top: 4vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

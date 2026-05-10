@@ -12,9 +12,18 @@ import Series from '../Series/Index.js';
 export default function Lander() {
 
     const [seriesView, setSeriesView] = useState("");
+    const [helpOpen, setHelpOpen] = useState(false);
 
     function handleSeriesClick(seriesName) {
         setSeriesView(seriesName);
+    }
+
+    function handleHelpClick() {
+        setHelpOpen(true);
+    }
+
+    function handleHelpClose() {
+        setHelpOpen(false);
     }
 
     return (
@@ -29,7 +38,7 @@ export default function Lander() {
                 <h2>Almost prestige television</h2>
             </div>
             <div className='itemRow'>
-                <h4>Twizl-produced original series<span className='help'>?</span></h4>
+                <h4>Twizl-produced original series<span className='help' onClick={handleHelpClick}>?</span></h4>
                 <div className="seriesImageContainer">
                     <img onClick={() => handleSeriesClick("CR Zero")} src={clogo} alt="croydon" className="portraitImage" />
                     <div className="seriesBubble">Full season</div>
@@ -76,6 +85,18 @@ export default function Lander() {
         )}
         {seriesView === "Dubai" && (
             <Series seriesName="Dubai W⚓" setSeriesView={setSeriesView} />
+        )}
+        {helpOpen && (
+            <div className="helpModalOverlay" onClick={handleHelpClose}>
+                <div className="helpModalCard" onClick={(e) => e.stopPropagation()}>
+                    <button className="helpModalClose" onClick={handleHelpClose} aria-label="Close help modal">✕</button>
+                    <img src={twizlLogo} alt="Twizl logo" className="helpModalLogo" />
+                    <h2 className="helpModalHeading">What&apos;s Twizl?</h2>
+                    <p className="helpModalText">
+                        <a href="https://twizl.com/" target="_blank" rel="noopener noreferrer" className="helpModalLink">Twizl</a> is a platform where people can write and direct their own AI TV series. While the AI creates the shots, the writing and direction remain fully in the hands of the creator. Twizl is moving away from video generation, so these are the only assets available here.
+                    </p>
+                </div>
+            </div>
         )}
         
         </div>
