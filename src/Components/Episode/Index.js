@@ -6,14 +6,14 @@ import CREp1Shot4 from './Ep4Shot.jpg';
 import CREp1Shot5 from './Ep5Shot.jpg';
 import CREp1Shot6 from './Ep6Shot.jpg';
 // Hungry Grass episode shots
-import HGEp1shot1 from './HGEp1Shot.jpg';
+// import HGEp1shot from './HGEp1shot.jpg';
 // Dubai W⚓ episode shots
-import DEp1shot1 from './DEp1Shot1.jpg';
-import DEp1shot2 from './DEp1Shot2.jpg';
-import DEp1shot3 from './DEp1Shot3.jpg';
-import DEp1shot4 from './DEp1Shot4.jpg';
-import DEp1shot5 from './DEp1Shot5.jpg';
-import DEp1shot6 from './DEp1Shot6.jpg';
+// import DEp1shot from './DEp1Shot.jpg';
+// import DEp2shot from './DEp2Shot.jpg';
+// import DEp3shot from './DEp3Shot.jpg';
+// import DEp4shot from './DEp4Shot.jpg';
+// import DEp5shot from './DEp5Shot.jpg';
+// import DEp6shot from './DEp6Shot.jpg';
 import './style.css';
 import EpisodePlayer from '../EpisodePlayer/Index.js';
 export default function Episode(props) {
