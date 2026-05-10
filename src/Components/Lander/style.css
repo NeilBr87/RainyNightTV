@@ -1,11 +1,11 @@
 .logo {
-    width: 8em;
+    width: 20VW;
     margin-top: 10px;
 }
 
 .landscapeImage {
     width: 88vw;
-    height: 32vh;
+    height: 34vh;
     border-radius: 10px;
     margin-top: 10px;
 }
@@ -18,10 +18,9 @@
 
 .portraitImage {
     width: 28vw;
-    height: 17vh;
-    border-radius: 10px;
+    height: 38vw;
+    border-radius: 2px;
     margin-right: 3vw;
-    border: 0.05px solid white;
 }
 
 .help {

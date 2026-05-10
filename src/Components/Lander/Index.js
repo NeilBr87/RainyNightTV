@@ -30,9 +30,9 @@ export default function Lander() {
             </div>
             <div className='itemRow'>
                 <h4>Twizl-produced original series<span className='help'>?</span></h4>
-                <img src={clogo} alt="croydon" className="portraitImage" />
-                <img src={HungryGrassLogo} alt="hungry grass" className="portraitImage" />
-                <img src={dublogo} alt="dublin" className="portraitImage" />
+                <img onClick={() => handleSeriesClick("CR Zero")} src={clogo} alt="croydon" className="portraitImage" />
+                <img onClick={() => handleSeriesClick("Hungry Grass")} src={HungryGrassLogo} alt="hungry grass" className="portraitImage" />
+                <img onClick={() => handleSeriesClick("Dubai")} src={dublogo} alt="dublin" className="portraitImage" />
             </div>
             <div className='itemRow'>
                 <h4>Selected Plaicin worlds<span className='help'>?</span></h4>
@@ -59,8 +59,15 @@ export default function Lander() {
         </div>)}
 
         {seriesView === "CR Zero" && (
-            <Series />
+            <Series seriesName="CR Zero" setSeriesView={setSeriesView} />
         )}
+        {seriesView === "Hungry Grass" && (
+            <Series seriesName="Hungry Grass" setSeriesView={setSeriesView} />
+        )}
+        {seriesView === "Dubai" && (
+            <Series seriesName="Dubai W⚓" setSeriesView={setSeriesView} />
+        )}
+        
         </div>
     )
 }
