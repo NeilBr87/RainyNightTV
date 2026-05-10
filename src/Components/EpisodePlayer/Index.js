@@ -1,9 +1,19 @@
+// CR Zero eps
 import CE1 from './CE1.mp4';
 import CE2 from './CE2.mp4';
 import CE3 from './CE3.mp4';
 import CE4 from './CE4.mp4';
 import CE5 from './CE5.mp4';
 import CE6 from './CE6.mp4';
+// Hungry Grass eps
+import HE1 from './HE1.mp4';
+// Dubai W⚓ eps
+import DE1 from './DE1.mp4';
+import DE2 from './DE2.mp4';
+import DE3 from './DE3.mp4';
+import DE4 from './DE4.mp4';
+import DE5 from './DE5.mp4';
+import DE6 from './DE6.mp4';
 import './style.css';
 export default function EpisodePlayer(props) {
 
