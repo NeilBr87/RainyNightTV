@@ -9,6 +9,7 @@ import dublogo from './dublogo.webp';
 import twizlLogo from './twizlLogo.webp';
 import { useState } from 'react';
 import Series from '../Series/Index.js';
+import motelday from './motelday.webp';
 export default function Lander() {
 
     const [seriesView, setSeriesView] = useState("");
@@ -52,20 +53,16 @@ export default function Lander() {
                     <div className="seriesBubble">Full season</div>
                 </div>
             </div>
-            {/* <div className='itemRow'>
-                <h4>Selected Plaicin worlds<span className='help'>?</span></h4>
-                <a href="https://plaicin.com/worlds/dc7cc93a-5b4e-4f7f-9b28-1f49c6be9fe8?sharer_id=30746037-8c3d-461c-8a92-5fa4120e660f&share_channel=copy_link" target="_blank" rel="noopener noreferrer">
-                    <img src={abbotts} alt="croydon" className="portraitImage" />
+            <div className='itemRow'>
+                <h4>Original shorts</h4>
+                <a href='https://youtu.be/SwoxQxRPsJ4' target="_blank" rel="noopener noreferrer" className="shortLink">
+                    <div className="seriesImageContainer">
+                    <img src={motelday} alt="croydon" className="portraitImage" />
+                    <div className="seriesBubble">Short</div>
+                </div>
                 </a>
-                
-                <a href="https://plaicin.com/worlds/f546c4e3-811c-461b-9a02-9d52b8b38234?sharer_id=30746037-8c3d-461c-8a92-5fa4120e660f&share_channel=copy_link" target="_blank" rel="noopener noreferrer">
-                    <img src={pleasance} alt="hungry grass" className="portraitImage" />
-                </a>
-                <a href="https://plaicin.com/worlds/dc7cc93a-5b4e-4f7f-9b28-1f49c6be9fe8?sharer_id=30746037-8c3d-461c-8a92-5fa4120e660f&share_channel=copy_link" target="_blank" rel="noopener noreferrer">
-                    <img src={trilogy} alt="dublin" className="portraitImage" />
-                </a>
-                <h5 style={{marginTop: '3px'}}>See all Plaicin worlds</h5>
-            </div> */}
+            </div>
+            
             <div className="footer">
                 <h4>Written and directed by me</h4>
                 <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center',alignItems: 'center', gap: '10px', marginTop: '-20px'}}>
