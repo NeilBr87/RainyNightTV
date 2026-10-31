@@ -1,71 +1,62 @@
-// CR Zero eps
-import CE1 from './CE1.mp4';
-import CE2 from './CE2.mp4';
-import CE3 from './CE3.mp4';
-import CE4 from './CE4.mp4';
-import CE5 from './CE5.mp4';
-import CE6 from './CE6.mp4';
-// Hungry Grass eps
-import HE1 from './HE1.mp4';
-// Dubai W⚓ eps
-import DE1 from './DE1.mp4';
-import DE2 from './DE2.mp4';
-import DE3 from './DE3.mp4';
-import DE4 from './DE4.mp4';
-import DE5 from './DE5.mp4';
-import DE6 from './DE6.mp4';
+import { useEffect } from 'react';
+import { Link, Navigate, useNavigate, useOutletContext, useParams } from 'react-router-dom';
+import { episodePath, showPath } from '../../data/shows';
 import './style.css';
 
-const episodeSources = {
-    "CR Zero": {
-        E1: CE1,
-        E2: CE2,
-        E3: CE3,
-        E4: CE4,
-        E5: CE5,
-        E6: CE6
-    },
-    "Hungry Grass": {
-        E1: HE1
-    },
-    "Dubai W⚓": {
-        E1: DE1,
-        E2: DE2,
-        E3: DE3,
-        E4: DE4,
-        E5: DE5,
-        E6: DE6
-    }
-};
+export default function EpisodePlayer() {
+    const { show } = useOutletContext();
+    const { number } = useParams();
+    const navigate = useNavigate();
+    const episode = show.episodes.find((ep) => String(ep.number) === number);
+    const next = episode && show.episodes.find((ep) => ep.number === episode.number + 1);
 
-export default function EpisodePlayer(props) {
-
-    function getEpisodeSource(episode) {
-        const series = episodeSources[props.seriesName] || episodeSources["CR Zero"];
-        return series[episode] || null;
+    function close() {
+        navigate(showPath(show));
     }
 
+    useEffect(() => {
+        const onKey = (e) => e.key === 'Escape' && navigate(showPath(show));
+        window.addEventListener('keydown', onKey);
+        const prevOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        return () => {
+            window.removeEventListener('keydown', onKey);
+            document.body.style.overflow = prevOverflow;
+        };
+    }, [navigate, show]);
+
+    if (!episode) return <Navigate to={showPath(show)} replace />;
 
     return (
-       <div className="episodeOverlay">
-    <div className="episodePlayerContainer">
+        <div className="episodeOverlay" role="dialog" aria-modal="true" aria-label={`${show.title}, ${episode.title}`}>
+            <div className="playerBar">
+                <button className="closeButton" onClick={close} aria-label="Close player">✕</button>
+                <div className="playerTitle">
+                    <span>{show.title}</span>
+                    <strong>{episode.title}</strong>
+                </div>
+                {next ? (
+                    <Link to={episodePath(show, next.number)} replace className="nextButton">
+                        Next ›
+                    </Link>
+                ) : (
+                    <span className="nextSpacer" />
+                )}
+            </div>
 
-        <button
-            className="closeButton"
-            onClick={() => props.setSelectedEpisode("E0")}
-        >
-            ✕
-        </button>
-
-        <video controls autoPlay className="videoPlayer">
-            <source
-                src={getEpisodeSource(props.selectedEpisode)}
-                type="video/mp4"
-            />
-            Your browser does not support the video tag.
-        </video>
-
-    </div>
-</div>
-    )
+            <video
+                key={episode.video}
+                className="videoPlayer"
+                src={episode.video}
+                poster={episode.still}
+                controls
+                autoPlay
+                playsInline
+                preload="auto"
+                onEnded={() => next && navigate(episodePath(show, next.number), { replace: true })}
+            >
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    );
 }

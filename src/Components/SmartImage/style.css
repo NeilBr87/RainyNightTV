@@ -1,0 +1,29 @@
+.smartImage {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--surface-2);
+    background-size: cover;
+    background-position: center;
+}
+
+.smartImage img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.smartImage.isLoaded img {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .smartImage img {
+        transition: none;
+    }
+}

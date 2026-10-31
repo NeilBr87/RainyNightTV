@@ -1,4 +1,4 @@
-import logo from '../Lander/logo.png';
+import logo from '../../assets/img/logo.webp';
 
 export default function Desktop() {
     return (
