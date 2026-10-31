@@ -1,0 +1,220 @@
+.showPage {
+    padding-bottom: calc(40px + env(safe-area-inset-bottom));
+}
+
+.showHero {
+    position: relative;
+    max-height: 62vh;
+    overflow: hidden;
+}
+
+.showHeroImage {
+    width: 100%;
+}
+
+.showHeroShade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 16, 19, 0) 55%, var(--bg) 100%);
+    pointer-events: none;
+}
+
+.showBody {
+    position: relative;
+    margin-top: -12px;
+    padding: 0 var(--gutter);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.showTitle {
+    font-size: 1.7rem;
+    line-height: 1.15;
+}
+
+.showMeta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dim);
+}
+
+.showBadge {
+    padding: 1px 6px;
+    border: 1px solid var(--text-faint);
+    border-radius: 3px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+.showPlay {
+    width: 100%;
+}
+
+.showBlurb {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--text-dim);
+}
+
+/* Disclaimer */
+.disclaimer {
+    align-self: flex-start;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid rgba(212, 200, 135, 0.35);
+    border-radius: var(--radius);
+    background: rgba(212, 200, 135, 0.08);
+    color: #e8dca0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.disclaimerHeader {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+.disclaimerIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #d4c887;
+    color: #111;
+    font-size: 0.72rem;
+    font-weight: 900;
+}
+
+.disclaimerChevron {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+}
+
+.disclaimer.isOpen .disclaimerChevron {
+    transform: rotate(180deg);
+}
+
+.disclaimerMessage {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: rgba(232, 220, 160, 0.85);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 22px;
+    margin-top: 8px;
+    border-top: 1px solid var(--line);
+}
+
+.tab {
+    position: relative;
+    padding: 14px 0 6px;
+    border: none;
+    background: none;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-faint);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.tab.isActive {
+    color: var(--text);
+}
+
+.tab.isActive::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent);
+}
+
+/* Episodes */
+.episodeList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.episodeItem {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.episodeItem:active .episodeThumb {
+    transform: scale(0.97);
+}
+
+.episodeThumb {
+    position: relative;
+    flex: 0 0 42%;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.15s ease;
+}
+
+.episodeThumbPlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 34px;
+    height: 34px;
+    margin: -17px 0 0 -17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.episodeThumbPlay svg {
+    width: 14px;
+    height: 14px;
+    margin-left: 2px;
+}
+
+.episodeText h3 {
+    font-size: 0.95rem;
+}
+
+.episodeText p {
+    margin-top: 2px;
+    font-size: 0.8rem;
+    color: var(--text-faint);
+}
+
+.comingSoon {
+    padding: 28px 16px;
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+    text-align: center;
+    color: var(--text-faint);
+    font-weight: 700;
+}
